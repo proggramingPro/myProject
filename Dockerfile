@@ -1,19 +1,8 @@
-# Use Node.js v14
+bashCopy code
 FROM node:14
-
-# Create app directory
-WORKDIR /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-COPY package*.json ./
-
+WORKDIR /app
+COPY . /app
 RUN npm install
-
-# Bundle app source
-COPY . .
-
-# Expose the port
-EXPOSE 3000
-
-CMD [ "node", "index.js" ]
+ENV PORT 8080
+EXPOSE 8080
+CMD ["npm", "start"]
