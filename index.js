@@ -6,7 +6,7 @@ const MongoStore = require('connect-mongo');
 require('dotenv').config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI, {});
